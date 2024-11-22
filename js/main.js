@@ -111,7 +111,7 @@ function demo(pvalue) {
         WebsiteName.classList.remove("is-valid");
     }
 }
-var pNameRegex_2 = /^(https:\/\/)/;
+var pNameRegex_2 = /^(https:\/\/)|(HTTPS:\/\/)/;
 function demo2(pvalue) {
     if (pNameRegex_2.test(pvalue)) {
         WebsiteURL.classList.add("is-valid");
