@@ -40,6 +40,8 @@ function Submit() {
             display();
             // Clear the form fields
             clearForm();
+            WebsiteName.classList.remove("is-valid");
+            WebsiteURL.classList.remove("is-valid");
         }
     } else {
 
