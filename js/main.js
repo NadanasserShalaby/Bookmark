@@ -23,7 +23,13 @@ function Submit() {
             }
         }
         if (same_name_entered == true) {
-            alert("You Enter the same Name");
+            // alert("You Enter the same Name");
+            Swal.fire({
+                title: "Oops...",
+                text: "You Enter the same Name",
+                icon: "error"
+              });
+              
         }
         else {
             WebsiteContainer.push(Website);
@@ -36,10 +42,14 @@ function Submit() {
             clearForm();
         }
     } else {
-        // console.log("%cSite Name or Url is not valid,\n\tPlease follow the rules below:\n\tSite name must contain at least 3 characters.\n\tSite URL must be a valid one.", "font-weight: bold; font-style: italic; color: red;");
 
-        // alert("Site Name or Url is not valid,\n\tPlease follow the rules below Site name must contain at least 3 characters \n\tSite URL must be a valid one");
-        alert("Site Name or Url is not valid, \n\tPlease follow the rules below: \n\t\tSite name must contain at least 4 characters.\n\t\tSite URL must be a valid one.");
+        // alert("Site Name or Url is not valid, \n\tPlease follow the rules below: \n\t\tSite name must contain at least 4 characters.\n\t\tSite URL must be a valid one.");
+        Swal.fire({
+            title: "Site Name or Url is not valid",
+            text: "Please follow the rules below: ",
+            text :"Site name must contain at least 4 characters.\n\t\tSite URL must be a valid one.",
+            icon: "error"
+          });
     }
 }
 function clearForm() {
@@ -111,7 +121,8 @@ function demo(pvalue) {
         WebsiteName.classList.remove("is-valid");
     }
 }
-var pNameRegex_2 = /^(HTTPS:\/\/) | (https:\/\/)/;
+// var pNameRegex_2 = /^(HTTPS:\/\/) | (https:\/\/)/;
+var pNameRegex_2 = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
 function demo2(pvalue) {
     if (pNameRegex_2.test(pvalue)) {
         WebsiteURL.classList.add("is-valid");
